@@ -15,6 +15,9 @@
             
             addClass(event.target.parentElement,'hover');
         });
+        listenEvent(gnbDepth1[i],["mouseleave"],function( ) {
+            removeClass(event.target,'hover');
+        });
 
        
     }
