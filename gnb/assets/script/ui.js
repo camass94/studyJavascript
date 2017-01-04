@@ -9,7 +9,7 @@
 
         
         listenEvent(gnbDepth1[i].children[0],["mouseover","focus"],function( ) {
-            for(var j=0,len2=gnbDepth1.length;j<len;j++) {
+            for(var j=0;j<len;j++) {
                 removeClass(gnbDepth1[j],'hover');
             }
             
