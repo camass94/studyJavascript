@@ -1,2 +1,2 @@
 # studyJavascript
-study pure javascript
+pure javascript
