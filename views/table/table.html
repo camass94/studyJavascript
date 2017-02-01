@@ -60,11 +60,15 @@
 			getNode : function(name,target) {
 				target = (target==undefined)?document:target;
 				var list = target.childNodes;
+                // for(var i in list) {
+                //     console.log('in', i)
+                // }
 				for(var i of list) {
 					if(String(i.nodeName).toLowerCase() == name.toLowerCase()) {
 						return i;
 					}
 				}
+                
 			},
 			getValue : function() {
 				if(form.name.value =="") {
