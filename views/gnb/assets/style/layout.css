@@ -1,0 +1,71 @@
+@charset "utf-8";
+/*
+.main|.sub	> #wrap > #header
+					+ #container > #lnb+#main
+					+ #footer
+ */
+/* ================================================================================
+	LAYOUT
+================================================================================ */
+/* GNB */
+.gnb {width: 990px;margin: 0 auto;}
+.gnb > li{float:left;width:20%;text-align:center;}
+.gnb > li > a {display: block;height: 49px;line-height: 49px;font-family: "맑은 고딕", "Malgun Gothic";font-weight:700;font-size: 18px;color: #111;letter-spacing: -1px;}
+.gnb > li.hover > a,
+.gnb > li.active > a {color: #196eb6;position: relative;}
+
+.gnb > li.hover > a:before,
+.gnb > li.active > a:before {content:' ';position: absolute;left:0;top:0;width: 100%;height: 4px;background: #006aba;}
+
+.gnb > li.active .depth2Wrap,
+.gnb > li.hover .depth2Wrap {display: block;}
+.gnb > li.hover .depth2Wrap,
+.gnb > li.active .depth2Wrap {background: #f1f8ff;}
+.gnb > li .depth2Wrap {display: none;/* height: 400px; */padding: 13px 0;border-top: 1px solid #dcdcdc;border-right: 1px solid #dcdcdc;}
+.gnb > li:first-child .depth2Wrap {border: 1px solid #dcdcdc;}
+.gnb .depth2Wrap>li>a {display: block;height: auto;line-height: 1.2em;padding: 8.5px 25px 8.5px 10px;white-space: normal;text-align: left;font-weight: bold;font-size: 14px;color: #000;}
+.gnb .depth2Wrap>li>a:hover,
+.gnb .depth2Wrap>li>a.active {background: #196eb6;color: #fff;}
+
+/* ================================================================================
+	MEDIA
+================================================================================ */
+.onlySm,.header_btn_mobile,.m-head_btnWrap {display: none;}
+
+@media (max-width:990px) {
+	/* common classes for mobile */
+	.m-hide {display: none;}
+	.m-show, .onlySm {display: inline-block;}
+	.m-full {width: 100%;}
+	.onlySm {display: block;}
+	/* ================================================================================
+		LAYOUT
+	================================================================================ */
+	/* GNB */
+	#gnb {width: 100%;}
+	#gnb > li {float:none;width: 100%;}
+	#gnb > li+li {border-top: 1px solid #1775d5;}
+	#gnb > li a {position: relative;}
+	#gnb > li > a:after {content:' ';position: absolute;right: 20px;top: 14px;width: 21px;height: 21px;background: url(../images/layout/mobile/navi_ico_plusminus.png) 0 0 no-repeat;}
+	#gnb > li.hover > a:after {background-position:  0 -39px;}
+	#gnb > li > a,
+	#gnb > li > a:hover,
+	#gnb > li.active > a,
+	#gnb > li.hover > a {color: #fff;}
+	#gnb > li > a:before {display: none;}
+	#gnb > li .depth2Wrap {border: 0;padding: 0 20px;height: auto;background: #1775d5;overflow: hidden;}
+	#gnb > li.hover .depth2Wrap,
+	#gnb > li.active .depth2Wrap {background: #1775d5;}
+	#gnb > li:first-child .depth2Wrap {border-top: 1px solid #3b8cdf;}
+	#gnb > li .depth2Wrap>li {width: 100%;}
+	#gnb > li .depth2Wrap>li+li {border-top: 1px solid #3b8cdf;}
+	#gnb > li .depth2Wrap>li>a{color: #fff;font-weight: normal;padding: 12px 30px;}
+	#gnb > li .depth2Wrap>li>a:before {content: ' ';position: absolute;left: 17px;top: 49.5%;width: 2px;height: 2px;background: #fff;}
+	#gnb > li .depth2Wrap>li>a:hover,
+	#gnb > li .depth2Wrap>li>a.active {background: none;text-decoration: underline;}
+
+}
+@media (max-width:690px) {
+}
+@media (max-width:480px) {
+}
