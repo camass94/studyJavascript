@@ -16,7 +16,6 @@
 <table class="tbl"><caption>Insert</caption>
 <thead>
 <tr>
-	<th scope="col">Index</th>
 	<th scope="col">Name</th>
 	<th scope="col">Number</th>
 	<th scope="col">etc.</th>
@@ -24,7 +23,6 @@
 </thead>
 <tbody>
 <tr>
-	<td class="idx"></td>
 	<td class="name"><input type="text" name="name" title="Name"></td>
 	<td class="number"><input type="text" name="number" title="Number"></td>
 	<td class="etc"><input type="text" name="etc" title="etc"></td>
@@ -37,6 +35,17 @@
 </form>
 </div>
 <div id="view">
+<table class="tbl"><caption>Insert</caption>
+<thead>
+<tr>
+	<th scope="col">Name</th>
+	<th scope="col">Number</th>
+	<th scope="col">etc.</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
 </div>
 <script>
 ;(function() {
@@ -83,22 +92,34 @@
             set : function(obj) {
                 arr.push(obj);
                 console.log('set', obj,arr)
+
+                var tr = document.createElement("tr");
+                for(var i in obj) {
+                    console.log(i, obj[i]);
+                    var td = document.createElement("td");
+                    var txt = document.createTextNode(obj[i]);
+                    td.className = i;
+                    td.appendChild(txt);
+                    tr.appendChild(td);
+                }
+                tbody.appendChild(tr)
+                
+                console.log(view)
             }
 	}
+
+    
 	
 	if (typeof fn == 'undefined') {
 		window.fn = {};
 	}
 	fn = _fn;
 })();
+
 var arr = [];
-var insert = fn.getId('insert');
-var insertTbl = fn.getClass('tbl',insert);
-
 var view = fn.getId('view');
-var thead = fn.getNode('thead',insertTbl)
-
-console.log(arr)
+var table = fn.getNode('table',view);
+var tbody = fn.getNode('tbody',table);
 </script>
 </body>
 </html>
