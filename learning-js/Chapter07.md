@@ -107,7 +107,7 @@ name과 age 말고도 사용자에 관한 정보가 10가지 혹은 100가지 �
 
 ## 7.4 블록 스코프
 
-`let`과 `const`는 식별자를 [블록](https://github.com/Jeonjeongho/JEON206/blob/master/Chapter4/index.md#%EB%B8%94%EB%A1%9D-%EB%AC%B8) 스코프에서 선언한다.
+`let`과 `const`는 식별자를 [블록](./Chapter04.md#%EB%B8%94%EB%A1%9D-%EB%AC%B8) 스코프에서 선언한다.
 
 ```
     console.log('before block');
