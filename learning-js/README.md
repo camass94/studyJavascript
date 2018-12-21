@@ -1,4 +1,6 @@
-# Learning<br />JavaScript
+# Learning<br>JavaScript
+
+https://github.com/Jeonjeongho/JEON206
 
 ```
 CHAPTER3 리터널과 변수, 상수, 데이터타입 (전정호 10/20)
